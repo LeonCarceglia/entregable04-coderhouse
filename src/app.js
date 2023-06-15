@@ -21,5 +21,5 @@ const PM = new ProductManager()
 const prodcuts = PM.getProducts()
 io.on("connection", socket => {
   console.log("Nuevo cliente conectado")
-  socket.emit(prodcuts)
+  //socket.emit(prodcuts)
 })
