@@ -1,5 +1,11 @@
 const socket = io()
 
-socket.on("prodcuts", data => {
-    console.log("algo")
-})
+socket.on("updatedProducts", (products) => {
+    const productList = document.getElementById("products")
+    productList.innerHTML = ""
+    products.forEach((product) => {
+      const listItem = document.createElement("li")
+      listItem.textContent = product.title
+      productList.appendChild(listItem)
+    })
+  })

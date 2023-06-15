@@ -18,8 +18,13 @@ app.use("/", viewsRouter)
 
 
 const PM = new ProductManager()
-const prodcuts = PM.getProducts()
+const {products} = PM.getProducts()
+app.get('/', (req, res) => {
+  res.render('home', products)
+})
 io.on("connection", socket => {
-  console.log("Nuevo cliente conectado")
-  //socket.emit(prodcuts)
+    console.log("Nuevo cliente conectado")
+    socket.on('productUpdated', () => {
+      io.emit('updatedProducts', products)
+    })
 })

@@ -1,17 +1,11 @@
 <h1>Productos actuales</h1>
 <div>
   <p id="products">
+  <ul>
     {{#each products}}
-        {{this.title}}
-        {{this.description}}
-        {{this.code}}
-        {{this.price}}
-        {{this.status}}
-        {{this.stock}}
-        {{this.category}}
-        {{this.thumbnails}}
-        {{this.id}}
+    <p>{{this.title}}</p>
     {{/each}}
+  </ul>
   </p>
 </div>
 <script src="/socket.io/socket.io.js"></script>
