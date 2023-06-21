@@ -3,9 +3,14 @@ import ProductManager from "../ProductManager.js"
 
 const router = express.Router()
 const productManager = new ProductManager()
-router.get("/", (req, res) => {
-  const products = productManager.getProducts()
+const products = productManager.getProducts()
+
+router.get("/realtimeproducts", (req, res) => {
   res.render("realTimeProducts", { products })
+})
+
+router.get("/", (req, res) => {
+  res.render("home", { products })
 })
 
 
