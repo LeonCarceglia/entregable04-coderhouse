@@ -18,5 +18,5 @@ socket.on("updatedProducts", (products) => {
       const listItem = document.createElement("li")
       listItem.textContent = product.title
       productList.appendChild(listItem)
-    })
+    }) // Aca deberia ir lo que actualice cuando cambie el .json de productos
   })
