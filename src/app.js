@@ -22,6 +22,7 @@ const {products} = PM.getProducts()
 app.get('/', (req, res) => {
   res.render('home', products)
 })
+io.emit('updatedProducts', products)
 io.on("connection", socket => {
     socket.on('productUpdated', () => {
       io.emit('updatedProducts', products)
